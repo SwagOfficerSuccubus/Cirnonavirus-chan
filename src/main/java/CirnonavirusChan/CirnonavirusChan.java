@@ -46,6 +46,10 @@ public class CirnonavirusChan {
                         .append("<:baka:609202434660761601>")
                         .send((TextChannel) channel);
             });
+            
+            //creates a counter to punish horny bakas
+			int hasHornyBakaCounter;
+			int hasHornyCounter;
 
             //Creates a listener for the various reaction images and help message
             api.addMessageCreateListener(event -> {
@@ -184,14 +188,28 @@ public class CirnonavirusChan {
                     //Scold horny bakas
 
                     if (hasHorny == true && hasBaka == true) {
-                        event.getChannel().sendMessage(new File("./images/hornybakas.png"));
-                    }
+						
+						//this is where cirno will scold you with a video instead if you do this too many times
+						if (hasHornyBakaCounter > 4) {
+						hasHornyBakaCounter = 0;
+						event.getChannel().sendMessage("reeeeee"));
+						} else {hasHornyBakaCounter++;
+								event.getChannel().sendMessage(new File("./images/hornybakas.png"))};
+                                                              }
+					
+					
 
                     //Scold horny people
 
                     if (hasHorny == true && hasBaka == false) {
-                        event.getChannel().sendMessage(new File("./images/hornypeople.png"));
-                    }
+					
+						//this is where cirno will scold you with a video instead if you do this too many times AGAIN
+						if (hasHornyCounter > 4) {
+						hasHornyCounter = 0;
+						event.getChannel().sendMessage("reeeeee"));
+						} else {hasHornyCounter++;
+								event.getChannel().sendMessage(new File("./images/hornypeople.png"))};
+                                                               }
 
                     //Baka
 
